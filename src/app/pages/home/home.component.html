@@ -1,1 +1,37 @@
-<p>home works!</p>
+<div>
+  <button>Cadastrar novo Funcionario</button>
+  <div class="input-box">
+    <label>Procurar:</label>
+    <input (input)="filtrarFuncionarios($event)" type="text" placeholder="Qual registro esta buscando" />
+  </div>
+</div>
+
+<table class="table"  >
+  <Thead>
+    <tr>
+      <th>Nome</th>
+      <th>Sobrenome</th>
+      <th>Departamento</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </Thead>
+  <tbody *ngFor="let item of funcionarios" >
+    <tr>
+      <td>
+        <img *ngIf="item.ativo" style="height: 20px; width: 20px;" src= "assets/images/Ativo.png" alt="">
+        <img *ngIf="!item.ativo"style="height: 20px; width: 20px;" src="assets/images/Inativo.png" alt="">
+      </td>
+      <td>{{item.nome}}</td>
+      <td>{{item.sobrenome}}</td>
+      <td>{{item.departamento}}</td>
+      <td>
+        <button>Editar</button>
+        <button>Detalhes</button>
+      </td>
+      <td>
+        <button>Excluir</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
