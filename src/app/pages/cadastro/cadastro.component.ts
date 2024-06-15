@@ -9,6 +9,8 @@ import { FuncionarioService } from 'src/app/services/funcionario.service';
   styleUrls: ['./cadastro.component.css'],
 })
 export class CadastroComponent {
+  btnAcao = "Cadastrar"
+  btnTitulo = "Cadastrar Funcionário"
   constructor(private funcionarioService: FuncionarioService, private router: Router) {}
 
   createFuncionario(funcionario: Funcionario) {

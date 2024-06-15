@@ -13,7 +13,6 @@ export class HomeComponent implements OnInit {
   funcionariosGeral: Funcionario[] = [];
   ngOnInit(): void {
     this.funcionarioService.GetFuncionarios().subscribe((res) => {
-      console.table(res.dados);
       const dados = res.dados;
       dados.map((item) => {
         item.dataDeCriacao = new Date(item.dataDeCriacao!).toLocaleDateString();
