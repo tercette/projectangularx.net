@@ -1,7 +1,7 @@
+import { Funcionario } from 'src/app/models/funcionarios';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
 import { HttpClient } from '@angular/common/http';
-import { Funcionario } from '../models/funcionarios';
 import { Observable } from 'rxjs';
 import { Response } from '../models/response';
 @Injectable({
@@ -14,5 +14,9 @@ export class FuncionarioService {
 
   GetFuncionarios(): Observable<Response<Funcionario[]>> {
     return this.http.get<Response<Funcionario[]>>(`${this.apiUrl}`);
+  }
+
+  CreateFuncionario(funcionario: Funcionario): Observable<Response<Funcionario[]>> {
+    return this.http.post<Response<Funcionario[]>>(`${this.apiUrl}`, funcionario);
   }
 }
