@@ -11,6 +11,7 @@ import { FuncionarioFormComponent } from './components/funcionario-form/funciona
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditarComponent } from './pages/editar/editar.component';
 import { DetalhesComponent } from './pages/detalhes/detalhes.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DetalhesComponent } from './pages/detalhes/detalhes.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
