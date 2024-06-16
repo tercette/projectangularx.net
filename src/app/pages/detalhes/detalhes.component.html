@@ -1,47 +1,66 @@
-<div>
+
+<mat-card>
+  <div>
   <h1>Detalhes Funcionários</h1>
 </div>
 
-<div>
+<div *ngIf="funcionario">
   <form >
-    <div *ngIf="funcionario" class="input-box">
-      <label>Nome</label>
-      <input type="text" value="{{funcionario.nome}}" disabled>
+    <div class="input-box">
+      <mat-form-field>
+        <mat-label>Nome:</mat-label>
+       <input matInput type="text" class="form-control text-dark" value="{{funcionario.nome}}" disabled>
+        </mat-form-field>
     </div>
 
-    <div *ngIf="funcionario"  class="input-box">
-      <label>Sobrenome</label>
-      <input type="text" value="{{funcionario.sobrenome}}" disabled >
+    <div  class="input-box">
+      <mat-form-field>
+        <mat-label>Sobrenome:</mat-label>
+        <input matInput type="text" class="form-control  text-dark" value="{{funcionario.sobrenome}}" disabled>
+        </mat-form-field>
     </div>
 
-    <div *ngIf="funcionario" class="input-box">
-      <label>Departamento</label>
-      <input type="text"  value="{{funcionario.departamento}}" disabled >
+    <div  class="input-box">
+      <mat-form-field>
+        <mat-label>Departamento:</mat-label>
+        <input matInput type="text" class="form-control  text-dark" id="Livro" value="{{funcionario.departamento}}" disabled>
+        </mat-form-field>
     </div>
 
-    <div *ngIf="funcionario" class="input-box">
-      <label>Turno</label>
-      <input type="text" value="{{funcionario.turno}}" disabled >
+    <div  class="input-box">
+      <mat-form-field>
+        <mat-label>Turno:</mat-label>
+        <input matInput type="text" class="form-control  text-dark" asp-for="LivroEmprestado" id="Livro" value="{{funcionario.turno}}" disabled>
+        </mat-form-field>
     </div>
 
-    <div *ngIf="funcionario" class="input-box">
-      <label>Situacao</label>
-      <input type="text" value="{{funcionario.ativo ? 'ativo' :  'inativo'}}" disabled >
+    <div  class="input-box">
+      <mat-form-field>
+        <mat-label>Situação:</mat-label>
+        <input matInput type="text" class="form-control  text-dark" asp-for="LivroEmprestado" id="Livro" value="{{funcionario.ativo == true ? 'Ativo' : 'Inativo'}}" disabled>
+        </mat-form-field>
     </div>
 
-    <div *ngIf="funcionario" class="input-box">
-      <label>Data de Criacao</label>
-      <input type="text" value="{{funcionario.dataDeCriacao}}" disabled >
+
+    <div  class="input-box">
+      <mat-form-field>
+        <mat-label>Data de Criação:</mat-label>
+        <input matInput type="text" class="form-control  text-dark" asp-for="LivroEmprestado" id="Livro" value="{{funcionario.dataDeCriacao}}" disabled>
+        </mat-form-field>
     </div>
 
-    <div *ngIf="funcionario" class="input-box">
-      <label>Data de alteracao</label>
-      <input type="text" value="{{funcionario.dataDeAlteracao}}" disabled >
+    <div  class="input-box">
+      <mat-form-field>
+        <mat-label>Data de Alteração:</mat-label>
+        <input matInput type="text" class="form-control  text-dark" asp-for="LivroEmprestado" id="Livro" value="{{funcionario.dataDeAlteracao}}" disabled>
+        </mat-form-field>
     </div>
 
-    <div *ngIf="funcionario" class="btn-box">
-      <button *ngIf="funcionario.ativo" (click)="inativarFuncionario()" >Inativa Funcionario</button>
-      <button routerLink="">Voltar</button>
+    <div class="btn-box">
+      <a  (click)="inativarFuncionario()"  mat-raised-button color="warn">Inativar Usuário</a>
+    <a  routerLink=""  mat-raised-button>Voltar</a>
     </div>
   </form>
 </div>
+
+</mat-card>
