@@ -10,6 +10,7 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { FuncionarioFormComponent } from './components/funcionario-form/funcionario-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditarComponent } from './pages/editar/editar.component';
+import { DetalhesComponent } from './pages/detalhes/detalhes.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { EditarComponent } from './pages/editar/editar.component';
     HomeComponent,
     CadastroComponent,
     FuncionarioFormComponent,
-    EditarComponent
+    EditarComponent,
+    DetalhesComponent
   ],
   imports: [
     BrowserModule,

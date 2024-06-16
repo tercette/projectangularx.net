@@ -1,0 +1,47 @@
+<div>
+  <h1>Detalhes Funcionários</h1>
+</div>
+
+<div>
+  <form >
+    <div *ngIf="funcionario" class="input-box">
+      <label>Nome</label>
+      <input type="text" value="{{funcionario.nome}}" disabled>
+    </div>
+
+    <div *ngIf="funcionario"  class="input-box">
+      <label>Sobrenome</label>
+      <input type="text" value="{{funcionario.sobrenome}}" disabled >
+    </div>
+
+    <div *ngIf="funcionario" class="input-box">
+      <label>Departamento</label>
+      <input type="text"  value="{{funcionario.departamento}}" disabled >
+    </div>
+
+    <div *ngIf="funcionario" class="input-box">
+      <label>Turno</label>
+      <input type="text" value="{{funcionario.turno}}" disabled >
+    </div>
+
+    <div *ngIf="funcionario" class="input-box">
+      <label>Situacao</label>
+      <input type="text" value="{{funcionario.ativo ? 'ativo' :  'inativo'}}" disabled >
+    </div>
+
+    <div *ngIf="funcionario" class="input-box">
+      <label>Data de Criacao</label>
+      <input type="text" value="{{funcionario.dataDeCriacao}}" disabled >
+    </div>
+
+    <div *ngIf="funcionario" class="input-box">
+      <label>Data de alteracao</label>
+      <input type="text" value="{{funcionario.dataDeAlteracao}}" disabled >
+    </div>
+
+    <div *ngIf="funcionario" class="btn-box">
+      <button *ngIf="funcionario.ativo" (click)="inativarFuncionario()" >Inativa Funcionario</button>
+      <button routerLink="">Voltar</button>
+    </div>
+  </form>
+</div>

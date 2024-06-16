@@ -1,9 +1,9 @@
 export interface Funcionario{
-id?: number;
+id?: number | ' ';
 nome: string;
 sobrenome: string;
 departamento: string;
-ativo: boolean;
+ativo: boolean | ' '
 turno: string;
 dataDeCriacao?: string;
 dataDeAlteracao?: string;
