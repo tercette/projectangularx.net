@@ -1,5 +1,8 @@
 <h1> {{btnTitulo}} </h1>
 <form [formGroup]="funcionarioForm" (ngSubmit)="submit()" #formDit="ngForm">
+
+<input type="hidden" formControlName="id">
+
   <div class="input_box">
     <label for="">Nome:</label>
     <input type="text" formControlName="nome" placeholder="Insira o nome">
@@ -17,7 +20,7 @@
       <option value="Financeiro">Financeiro</option>
       <option value="Compras">Compras</option>
       <option value="Atendimento">Atendimento</option>
-      <option value="Zeladoria">ZValidators.required, Validators.a</option>
+      <option value="Zeladoria">Zeladoria</option>
       <option value="Vendas">Vendas</option>
     </select>
   </div>

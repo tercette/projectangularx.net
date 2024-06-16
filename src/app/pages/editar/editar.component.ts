@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Funcionario } from 'src/app/models/funcionarios';
 import { FuncionarioService } from 'src/app/services/funcionario.service';
 
@@ -11,7 +11,8 @@ import { FuncionarioService } from 'src/app/services/funcionario.service';
 export class EditarComponent implements OnInit {
   constructor(
     private funcionarioService: FuncionarioService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
   btnAcao: string = 'Editar';
   btnTitulo: string = 'Editar Funcionário';
@@ -22,7 +23,14 @@ export class EditarComponent implements OnInit {
 
     this.funcionarioService.GetFuncionario(id).subscribe((data) => {
       this.funcionario = data.dados;
-      console.log(this.funcionario)
     });
+  }
+
+  editarFuncionario(funcionario: Funcionario) {
+    this.funcionarioService
+      .UpdateFuncionario(funcionario)
+      .subscribe((data) => {
+        this.router.navigate(['/']);
+      });
   }
 }
