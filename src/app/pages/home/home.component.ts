@@ -9,8 +9,9 @@ import { FuncionarioService } from 'src/app/services/funcionario.service';
 })
 export class HomeComponent implements OnInit {
   constructor(private funcionarioService: FuncionarioService) {}
-  funcionarios: Funcionario[] = [];
+  funcionario: Funcionario[] = [];
   funcionariosGeral: Funcionario[] = [];
+  colunas = ['Situacao', 'Nome', 'Sobrenome', 'Departamento', 'Acoes', 'Excluir'];
   ngOnInit(): void {
     this.funcionarioService.GetFuncionarios().subscribe((res) => {
       const dados = res.dados;
@@ -19,7 +20,7 @@ export class HomeComponent implements OnInit {
         item.dataDeAlteracao = new Date(
           item.dataDeAlteracao!
         ).toLocaleDateString();
-        this.funcionarios = res.dados;
+        this.funcionario = res.dados;
         this.funcionariosGeral = res.dados;
       });
     });
@@ -27,7 +28,7 @@ export class HomeComponent implements OnInit {
 
   filtrarFuncionarios(evento: any) {
     const target = evento.target.value.toLowerCase();
-    this.funcionarios = this.funcionariosGeral.filter((funcionario) => {
+    this.funcionario = this.funcionariosGeral.filter((funcionario) => {
       return funcionario.nome.toLowerCase().includes(target);
     });
   }
